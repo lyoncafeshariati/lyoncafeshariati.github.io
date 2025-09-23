@@ -1,0 +1,38 @@
+{
+  "categories": [
+    {
+      "name": "نوشیدنی‌های گرم",
+      "items": [
+        {
+          "image": "https://via.placeholder.com/300x200.png/1a1a1a/ffffff?text=Espresso",
+          "name": "اسپرسو",
+          "price": "۷۵,۰۰۰",
+          "description": "قهوه‌ای دمی با طعم اصیل و قوی."
+        },
+        {
+          "image": "https://via.placeholder.com/300x200.png/1a1a1a/ffffff?text=Latte",
+          "name": "کافه لته",
+          "price": "۹۵,۰۰۰",
+          "description": "ترکیبی مخملی از اسپرسو و شیر بخار دیده."
+        }
+      ]
+    },
+    {
+      "name": "کیک و دسر",
+      "items": [
+        {
+          "image": "https://via.placeholder.com/300x200.png/1a1a1a/ffffff?text=Cheesecake",
+          "name": "چیزکیک نیویورکی",
+          "price": "۱۲۰,۰۰۰",
+          "description": "با سس توت فرنگی دست‌ساز."
+        },
+        {
+          "image": "https://via.placeholder.com/300x200.png/1a1a1a/ffffff?text=Brownie",
+          "name": "کیک براونی شکلاتی",
+          "price": "۱۱۰,۰۰۰",
+          "description": "به همراه یک اسکوپ بستنی وانیلی."
+        }
+      ]
+    }
+  ]
+}
