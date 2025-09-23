@@ -1,35 +1,72 @@
 // صبر کن تا تمام محتوای صفحه بارگذاری شود
 document.addEventListener("DOMContentLoaded", function() {
     
-    // تمام دکمه‌های آکاردئون را پیدا کن
-    const accordionButtons = document.querySelectorAll(".accordion-button");
+    const menuContainer = document.querySelector(".menu-container");
 
-    accordionButtons.forEach(button => {
-        // به هر دکمه یک شنونده رویداد کلیک اضافه کن
-        button.addEventListener("click", function() {
-            
-            // ابتدا، تمام پنل‌های دیگر را ببند
-            accordionButtons.forEach(otherButton => {
-                // اگر دکمه دیگری فعال است و آن دکمه، همین دکمه‌ای که کلیک شده نیست
-                if (otherButton !== this && otherButton.classList.contains("active")) {
-                    otherButton.classList.remove("active");
-                    const panelToClose = otherButton.nextElementSibling;
-                    panelToClose.style.maxHeight = null;
-                }
+    // دریافت اطلاعات منو از فایل menu.json
+    fetch('menu.json')
+        .then(response => response.json())
+        .then(data => {
+            // به ازای هر دسته بندی در فایل json، یک آکاردئون بساز
+            data.categories.forEach(category => {
+                const accordionDiv = document.createElement('div');
+                accordionDiv.classList.add('accordion');
+
+                // ساخت HTML برای یک دسته بندی کامل
+                accordionDiv.innerHTML = `
+                    <button class="accordion-button">
+                        ${category.name}
+                        <i class="fa-solid fa-chevron-down icon"></i>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="menu-items-grid">
+                            ${category.items.map(item => `
+                                <div class="menu-item">
+                                    <img src="${item.image}" alt="${item.name}">
+                                    <div class="item-details">
+                                        <div class="item-header">
+                                            <h3>${item.name}</h3>
+                                            <span class="price">${item.price}</span>
+                                        </div>
+                                        <p class="description">${item.description}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                menuContainer.appendChild(accordionDiv);
             });
 
-            // حالا پنل مربوط به دکمه کلیک شده را باز یا بسته کن
-            this.classList.toggle("active");
-            const panel = this.nextElementSibling;
-
-            // اگر پنل باز است، آن را ببند
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                // اگر بسته است، آن را به اندازه ارتفاع محتوایش باز کن
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
+            // پس از ساختن تمام آکاردئون‌ها، منطق کلیک کردن را به آن‌ها اضافه کن
+            setupAccordionLogic();
+        })
+        .catch(error => {
+            console.error('خطا در بارگذاری اطلاعات منو:', error);
+            menuContainer.innerHTML = '<p style="text-align: center;">متاسفانه در بارگذاری منو مشکلی پیش آمده است.</p>';
         });
-    });
 
+    function setupAccordionLogic() {
+        const accordionButtons = document.querySelectorAll(".accordion-button");
+
+        accordionButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                accordionButtons.forEach(otherButton => {
+                    if (otherButton !== this && otherButton.classList.contains("active")) {
+                        otherButton.classList.remove("active");
+                        const panelToClose = otherButton.nextElementSibling;
+                        panelToClose.style.maxHeight = null;
+                    }
+                });
+
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    }
 });
