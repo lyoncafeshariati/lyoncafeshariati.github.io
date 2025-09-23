@@ -20,8 +20,12 @@
 
     <main class="menu-container">
 
-        <section class="menu-category">
-            <h2>نوشیدنی‌های گرم</h2>
+    <div class="accordion">
+        <button class="accordion-button">
+            نوشیدنی‌های گرم
+            <i class="fa-solid fa-chevron-down icon"></i>
+        </button>
+        <div class="accordion-panel">
             <div class="menu-items-grid">
                 <div class="menu-item">
                     <img src="https://via.placeholder.com/300x200.png/1a1a1a/ffffff?text=Espresso" alt="عکس اسپرسو">
@@ -43,11 +47,16 @@
                         <p class="description">ترکیبی مخملی از اسپرسو و شیر بخار دیده.</p>
                     </div>
                 </div>
-                </div>
-        </section>
+            </div>
+        </div>
+    </div>
 
-        <section class="menu-category">
-            <h2>کیک و دسر</h2>
+    <div class="accordion">
+        <button class="accordion-button">
+            کیک و دسر
+            <i class="fa-solid fa-chevron-down icon"></i>
+        </button>
+        <div class="accordion-panel">
             <div class="menu-items-grid">
                 <div class="menu-item">
                     <img src="https://via.placeholder.com/300x200.png/1a1a1a/ffffff?text=Cheesecake" alt="عکس چیزکیک">
@@ -69,17 +78,18 @@
                         <p class="description">به همراه یک اسکوپ بستنی وانیلی.</p>
                     </div>
                 </div>
-                </div>
-        </section>
-
+            </div>
+        </div>
+    </div>
+    
     </main>
 
     <footer class="site-footer">
         <p>آدرس: تهران، خیابان شریعتی، کافه لیون</p>
         <a href="https://instagram.com/your-username" target="_blank" class="social-icon">
-            <i class="fab fa-instagram"></i>
+        <i class="fab fa-instagram"></i>
         </a>
     </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
