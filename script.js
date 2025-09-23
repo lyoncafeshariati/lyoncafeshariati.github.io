@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuContainer = document.querySelector(".menu-container");
 
     // دریافت اطلاعات منو از فایل menu.json
-    fetch('menu.json')
+    fetch('menu.json?v=1.0')
         .then(response => response.json())
         .then(data => {
             // به ازای هر دسته بندی در فایل json، یک آکاردئون بساز
