@@ -171,3 +171,64 @@ footer.site-footer {
 .social-icon:hover {
     transform: scale(1.2);
 }
+
+/* ======== استایل‌های جدید برای آکاردئون ======== */
+
+.accordion {
+    width: 100%;
+    margin-bottom: 15px; /* فاصله بین دسته‌بندی‌ها */
+}
+
+.accordion-button {
+    /* بازنویسی استایل پیش‌فرض دکمه */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    
+    /* استایل‌دهی شبیه به تیتر قبلی */
+    width: 100%;
+    font-size: 2rem;
+    color: var(--primary-text-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    
+    /* چیدمان نوشته و آیکون */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.accordion-button:hover, .accordion-button.active {
+    color: var(--accent-color);
+}
+
+.accordion-button .icon {
+    font-size: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+/* چرخش آیکون در حالت فعال */
+.accordion-button.active .icon {
+    transform: rotate(180deg);
+}
+
+
+.accordion-panel {
+    /* مهم: پنل به صورت پیش‌فرض مخفی است */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: var(--bg-color);
+    padding-right: 15px; /* برای زیبایی بیشتر */
+    padding-left: 15px;
+}
+
+/* محتوای داخل پنل نیاز به کمی فاصله از بالا دارد */
+.accordion-panel .menu-items-grid {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
