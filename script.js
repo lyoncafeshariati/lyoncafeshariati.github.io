@@ -66,17 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h2 class="text-2xl font-bold border-b-2 border-yellow-500 pb-2 mb-6">${category.name}</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         ${category.items.map(item => `
-                            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 transition-all duration-300">
-                                <div class="flex items-start">
-                                    <div class="flex-1 mr-4">
-                                        <h3 class="text-lg font-bold text-yellow-400 shadow-md hover:text-yellow-300 transition-colors mb-1">${item.name}</h3>
-                                        <p class="text-gray-400 text-sm">${item.description || 'توضیحات موجود نیست'}</p>
-                                    </div>
-                                    <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md ml-4 flex-shrink-0">
+                            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 transition-all duration-300 flex items-center">
+                                <div class="flex-1 mr-4">
+                                    <h3 class="text-lg font-bold text-yellow-400 shadow-md hover:text-yellow-300 transition-colors mb-1">${item.name}</h3>
+                                    <p class="text-gray-400 text-sm">${item.description || 'توضیحات موجود نیست'}</p>
                                 </div>
-                                <div class="text-yellow-600 font-semibold text-lg mt-2 ml-4">
-                                    ${item.price}
-                                </div>
+                                <div class="text-yellow-600 font-semibold text-lg ml-4">${item.price}</div>
+                                <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md ml-4 flex-shrink-0" style="margin-top: -10px; margin-bottom: -10px;">
                             </div>
                         `).join('')}
                     </div>
