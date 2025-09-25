@@ -46,7 +46,7 @@ body {
     padding: 0.5rem;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* مطمئن می‌شه بالای همه قرار بگیره */
+    z-index: 1000;
     transition: all 0.3s ease;
 }
 
@@ -64,7 +64,7 @@ body {
 }
 
 .category-circle:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1); /* فقط بزرگ شدن، بدون کج شدن */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
@@ -78,7 +78,7 @@ body {
 /* کادر عنوان زیر دایره */
 .category-circle .title-box {
     position: absolute;
-    bottom: -3rem; /* فاصله بیشتر برای جلوگیری از برخورد با تصویر */
+    bottom: -3rem;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
@@ -91,9 +91,12 @@ body {
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
     width: 90%;
-    max-height: 3rem; /* ارتفاع بیشتر برای متن چندخطی */
+    min-height: 2.4rem; /* برای 2 خط */
     overflow: hidden;
     line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* استایل دایره‌های کوچک شده */
@@ -105,7 +108,7 @@ body {
 }
 
 .category-circle-small:hover {
-    transform: scale(1.15) rotate(5deg);
+    transform: scale(1.15); /* فقط بزرگ شدن، بدون کج شدن */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }
 
@@ -119,7 +122,7 @@ body {
 /* کادر عنوان زیر دایره کوچک */
 .category-circle-small .title-box {
     position: absolute;
-    bottom: -2.5rem; /* فاصله بیشتر برای جلوگیری از برخورد */
+    bottom: -2.5rem;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
@@ -132,16 +135,28 @@ body {
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
     width: 90%;
-    max-height: 2rem;
+    min-height: 1.4rem; /* برای 2 خط */
     overflow: hidden;
     line-height: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* گرید دایره‌ها وسط‌چین */
 .category-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(128px, 1fr));
-    gap: 3.5rem; /* فاصله بیشتر برای کادر عنوان */
+    gap: 3.5rem;
+    justify-items: center;
+    width: 100%;
+}
+
+/* گرید دایره‌های کوچک (3 تا در ردیف) */
+.small-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(64px, 1fr));
+    gap: 2rem; /* فاصله بیشتر */
     justify-items: center;
     width: 100%;
 }
@@ -158,6 +173,10 @@ body {
     .category-grid:has(> :nth-child(9):last-child) > :last-child {
         grid-column: 2 / 3;
     }
+    .small-grid {
+        grid-template-columns: repeat(3, minmax(64px, 1fr));
+        gap: 2.5rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -167,4 +186,14 @@ body {
     .category-grid:has(> :nth-child(9):last-child) > :last-child {
         grid-column: 2 / 4;
     }
+    .small-grid {
+        grid-template-columns: repeat(3, minmax(64px, 1fr));
+        gap: 3rem;
+    }
+}
+
+/* متمایز کردن منوی باز */
+.category-circle-small.selected {
+    ring: 4px solid #d4af37; /* حاشیه ضخیم طلایی */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); /* سایه خاص */
 }
