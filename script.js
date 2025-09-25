@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuContainer.innerHTML = `
             <div class="category-grid animate-fadeInUp">
                 ${menuData.categories.map(category => `
-                    <div class="category-circle w-32 sm:w-40 h-32 sm:h-40 rounded-full bg-gray-800 flex items-center justify-center" data-category="${category.name}">
+                    <div class="category-circle w-32 sm:w-40 h-32 sm:h-40 rounded-full flex items-center justify-center" data-category="${category.name}">
                         <img src="${category.categoryImage || 'https://via.placeholder.com/150?text=${encodeURIComponent(category.name)}'}" alt="${category.name}" class="rounded-full">
                         <div class="title-box">${category.name}</div>
                     </div>
