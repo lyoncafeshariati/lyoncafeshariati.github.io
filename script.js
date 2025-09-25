@@ -65,14 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div>
                     <h2 class="text-2xl font-bold border-b-2 border-yellow-500 pb-2 mb-6">${category.name}</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        // در تابع renderCategoryItems، بخش مربوط به آیتم‌ها را تغییر دهید:
                         ${category.items.map(item => `
-                            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 transition-all duration-300 flex items-center">
-                                <div class="flex-1 mr-4">
-                                    <h3 class="text-lg font-bold text-yellow-400 shadow-md hover:text-yellow-300 transition-colors mb-1">${item.name}</h3>
+                            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 transition-all duration-300 relative min-h-[140px]">
+                                <!-- عکس در سمت راست -->
+                                <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md absolute right-4 top-1/2 transform -translate-y-1/2">
+                                
+                                <!-- عنوان و توضیحات در سمت چپ -->
+                                <div class="pr-24"> <!-- فاصله از سمت راست برای عکس -->
+                                    <h3 class="text-lg font-bold text-yellow-400 hover:text-yellow-300 transition-colors mb-1">${item.name}</h3>
                                     <p class="text-gray-400 text-sm">${item.description || 'توضیحات موجود نیست'}</p>
                                 </div>
-                                <div class="text-yellow-600 font-semibold text-lg ml-4">${item.price}</div>
-                                <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md ml-4 flex-shrink-0" style="margin-top: -10px; margin-bottom: -10px;">
+                                
+                                <!-- قیمت در چپ پایین -->
+                                <div class="absolute left-4 bottom-4 text-yellow-600 font-semibold text-lg">${item.price}</div>
                             </div>
                         `).join('')}
                     </div>
