@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div>
                     <h2 class="text-2xl font-bold border-b-2 border-yellow-500 pb-2 mb-6">${category.name}</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        // در تابع renderCategoryItems، بخش مربوط به آیتم‌ها را تغییر دهید:
                         ${category.items.map(item => `
                             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 transition-all duration-300 relative min-h-[140px]">
                                 <!-- عکس در سمت راست -->
