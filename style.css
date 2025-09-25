@@ -207,3 +207,7 @@ body {
          height: auto; /* ارتفاع خودکار */
          object-fit: cover; /* برش تصویر */
      }
+
+.grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div {
+    min-height: 100px; /* ارتفاع حداقل برای چیدمان بهتر */
+}
