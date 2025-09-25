@@ -37,24 +37,34 @@ body {
     }
 }
 
-/* استایل دکمه خانه - ثابت و زیر تیتر */
+/* استایل دکمه خانه - موقعیت جدید */
 .home-button {
-    position: relative; /* تغییر از fixed به relative */
-    top: auto;
-    left: auto;
     background: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     transition: all 0.3s ease;
-    margin-top: 0.5rem; /* فاصله از تیتر */
-    display: inline-block; /* برای قرارگیری در کنار سایر عناصر */
+    display: inline-block;
 }
 
 .home-button:hover {
     transform: scale(1.1);
     background: rgba(212, 175, 55, 0.2);
+}
+
+/* هدر اصلی */
+header {
+    position: relative;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+/* استایل لوگو */
+header img {
+    border: 2px solid #d4af37;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
 }
 
 /* استایل دایره‌های دسته‌بندی */
