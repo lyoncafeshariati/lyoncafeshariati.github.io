@@ -232,25 +232,3 @@ footer.site-footer {
     padding-top: 30px;
     padding-bottom: 10px;
 }
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.logo {
-    width: 60px; /* اندازه رو میتونی تغییر بدی */
-    height: 60px;
-    border-radius: 50%; /* برای شکل دایره‌ای */
-    background: transparent; /* پس زمینه شفاف */
-    object-fit: contain;
-}
-
-.logo-container h1 {
-    color: #8B4513; /* رنگ متن هماهنگ با تم سایت */
-    margin: 0;
-    font-size: 2.2em;
-}
