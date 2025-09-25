@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${menuData.categories.map(category => `
                     <div class="category-circle w-32 sm:w-40 h-32 sm:h-40 rounded-full bg-gray-800 flex items-center justify-center" data-category="${category.name}">
                         <img src="${category.categoryImage || 'https://via.placeholder.com/150?text=${encodeURIComponent(category.name)}'}" alt="${category.name}" class="rounded-full">
-                        <span>${category.name}</span>
+                        <div class="title-box">${category.name}</div>
                     </div>
                 `).join('')}
             </div>
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${menuData.categories.map(cat => `
                         <div class="category-circle-small relative ${cat.name === categoryName ? 'ring-2 ring-yellow-500' : ''}" data-category="${cat.name}">
                             <img src="${cat.categoryImage || 'https://via.placeholder.com/64?text=${encodeURIComponent(cat.name)}'}" alt="${cat.name}" class="rounded-full">
-                            <span>${cat.name}</span>
+                            <div class="title-box">${cat.name}</div>
                         </div>
                     `).join('')}
                 </div>
