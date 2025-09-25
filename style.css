@@ -202,8 +202,11 @@ body {
 }
 
 .grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div {
-    display: block; /* برای جدا کردن ردیف‌ها */
+    display: flex;
+    justify-content: space-between; /* برای چیدمان بهتر */
+    align-items: center; /* وسط کردن عمودی */
 }
-.grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div > div:last-child {
-    margin-top: 0.5rem; /* فاصله قیمت از متن */
+
+.grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div img {
+    margin: -10px 0; /* تنظیم عمودی عکس وسط کادر */
 }
