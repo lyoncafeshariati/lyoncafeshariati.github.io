@@ -37,17 +37,19 @@ body {
     }
 }
 
-/* استایل دکمه خانه */
+/* استایل دکمه خانه - ثابت و زیر تیتر */
 .home-button {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
+    position: relative; /* تغییر از fixed به relative */
+    top: auto;
+    left: auto;
     background: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     transition: all 0.3s ease;
+    margin-top: 0.5rem; /* فاصله از تیتر */
+    display: inline-block; /* برای قرارگیری در کنار سایر عناصر */
 }
 
 .home-button:hover {
