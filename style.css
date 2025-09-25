@@ -46,11 +46,14 @@ body {
 .category-circle {
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.3); /* سایه و گلو طلایی */
+    background: radial-gradient(circle, rgba(30, 30, 30, 0.9), rgba(18, 18, 18, 1)); /* گرادیان پس‌زمینه */
 }
 
 .category-circle:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(5deg); /* بزرگ شدن و چرخش ملایم */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
 .category-circle img {
@@ -58,16 +61,23 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 9999px;
+    opacity: 0.9; /* کمی شفاف برای خوانایی نوشته */
 }
 
 .category-circle span {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.875rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* دقیقاً وسط دایره */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    max-width: 80%; /* جلوگیری از خروج متن */
+    line-height: 1.2;
 }
 
 /* استایل دایره‌های کوچک شده در حالت انتخاب */
@@ -75,11 +85,14 @@ body {
     width: 64px;
     height: 64px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 8px rgba(212, 175, 55, 0.3);
+    background: radial-gradient(circle, rgba(30, 30, 30, 0.9), rgba(18, 18, 18, 1));
 }
 
 .category-circle-small:hover {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 12px rgba(212, 175, 55, 0.5);
 }
 
 .category-circle-small img {
@@ -87,14 +100,42 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 9999px;
+    opacity: 0.9;
 }
 
 .category-circle-small span {
     position: absolute;
-    bottom: 4px;
-    right: 4px;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 2px 4px;
-    border-radius: 2px;
-    font-size: 0.75rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.65rem; /* فونت کوچکتر اما خوانا */
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.1;
 }
+
+/* گرید دایره‌ها مایل به راست */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(128px, 1fr));
+    gap: 1.5rem;
+    justify-items: start; /* مایل به راست (چون RTL هست) */
+}
+
+@media (min-width: 640px) {
+    .category-grid {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(4, minmax(160px, 1fr));
+    }
+}
+```
