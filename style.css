@@ -198,5 +198,5 @@ body {
 }
 
 .animate-fadeIn > div:last-child h2 {
-    margin-top: 3rem; /* فاصله بین دایره‌های کوچک و سربرگ آیتم‌ها */
+    margin-top: 3.5rem; /* فاصله بین دایره‌های کوچک و سربرگ آیتم‌ها */
 }
