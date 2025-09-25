@@ -66,21 +66,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h2 class="text-2xl font-bold border-b-2 border-yellow-500 pb-2 mb-6">${category.name}</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         ${category.items.map(item => `
-                            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 flex items-center transition-all duration-300">
-                                <div class="flex-1 mr-4">
-                                    <div class="font-bold text-xl text-yellow-400 shadow-md hover:text-yellow-300 transition-colors mb-1">
-                                        ${item.name}
+                            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 transition-all duration-300">
+                                <div class="flex items-start">
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-baseline mb-2">
+                                            <h3 class="text-lg font-bold text-yellow-400 shadow-md hover:text-yellow-300 transition-colors">${item.name}</h3>
+                                            <span class="text-yellow-600 font-semibold">${item.price}</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">${item.description || 'توضیحات موجود نیست'}</p>
                                     </div>
-                                    <div class="text-sm text-gray-400">
-                                        ${item.description || 'توضیحات موجود نیست'}
-                                    </div>
+                                    <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md ml-4 flex-shrink-0">
                                 </div>
-                                <div class="ml-4 flex-shrink-0">
-                                    <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md">
-                                </div>
-                            </div>
-                            <div class="text-lg font-semibold text-yellow-600 mt-2 text-right sm:text-left">
-                                ${item.price}
                             </div>
                         `).join('')}
                     </div>
