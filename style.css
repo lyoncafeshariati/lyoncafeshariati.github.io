@@ -121,7 +121,7 @@ body {
 /* کادر عنوان زیر دایره کوچک */
 .category-circle-small .title-box {
     position: absolute;
-    bottom: -1.2rem;
+    bottom: -1.4rem;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
@@ -156,7 +156,7 @@ body {
 .small-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(64px, 1fr));
-    gap: 3rem 1.5rem; /* فاصله بیشتر */
+    gap: 2rem 1.5rem; /* فاصله بیشتر */
     justify-items: center;
     width: 100%;
 }
@@ -195,5 +195,8 @@ body {
 /* متمایز کردن منوی باز */
 .category-circle-small.selected {
     ring: 4px solid #d4af37; /* حاشیه ضخیم طلایی */
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); /* سایه خاص */
+}
+
+.animate-fadeIn > div:last-child h2 {
+    margin-top: 3rem; /* فاصله بین دایره‌های کوچک و سربرگ آیتم‌ها */
 }
