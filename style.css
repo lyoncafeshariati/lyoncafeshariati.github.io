@@ -37,22 +37,17 @@ body {
     }
 }
 
-/* چرخش لوگو */
-.hover\:rotate-360:hover {
-    transform: rotate(360deg);
-}
-
 /* استایل دایره‌های دسته‌بندی */
 .category-circle {
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.3); /* سایه و گلو طلایی */
-    background: radial-gradient(circle, rgba(30, 30, 30, 0.9), rgba(18, 18, 18, 1)); /* گرادیان پس‌زمینه */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.3);
+    background: radial-gradient(circle, rgba(30, 30, 30, 0.9), rgba(18, 18, 18, 1));
 }
 
 .category-circle:hover {
-    transform: scale(1.1) rotate(5deg); /* بزرگ شدن و چرخش ملایم */
+    transform: scale(1.1) rotate(5deg);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
@@ -61,26 +56,25 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 9999px;
-    opacity: 0.9; /* کمی شفاف برای خوانایی نوشته */
 }
 
-.category-circle span {
+/* کادر عنوان زیر دایره */
+.category-circle .title-box {
     position: absolute;
-    top: 50%;
+    bottom: -2rem;
     left: 50%;
-    transform: translate(-50%, -50%); /* دقیقاً وسط دایره */
-    background: rgba(0, 0, 0, 0.7);
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
     padding: 6px 12px;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #fff;
     text-align: center;
-    max-width: 80%; /* جلوگیری از خروج متن */
-    line-height: 1.2;
+    width: 80%;
 }
 
-/* استایل دایره‌های کوچک شده در حالت انتخاب */
+/* استایل دایره‌های کوچک شده */
 .category-circle-small {
     width: 64px;
     height: 64px;
@@ -100,41 +94,52 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 9999px;
-    opacity: 0.9;
 }
 
-.category-circle-small span {
+/* کادر عنوان زیر دایره کوچک */
+.category-circle-small .title-box {
     position: absolute;
-    top: 50%;
+    bottom: -1.5rem;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.7);
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
     padding: 3px 6px;
     border-radius: 4px;
-    font-size: 0.65rem; /* فونت کوچکتر اما خوانا */
+    font-size: 0.6rem;
     font-weight: 600;
     color: #fff;
     text-align: center;
-    max-width: 80%;
-    line-height: 1.1;
+    width: 80%;
 }
 
-/* گرید دایره‌ها مایل به راست */
+/* گرید دایره‌ها وسط‌چین */
 .category-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(128px, 1fr));
-    gap: 1.5rem;
-    justify-items: start; /* مایل به راست (چون RTL هست) */
+    gap: 2.5rem; /* فاصله بیشتر برای جا دادن کادر عنوان */
+    justify-items: center; /* وسط‌چین کردن دایره‌ها */
+    width: 100%;
+}
+
+/* وسط‌چین کردن آخرین دایره در تعداد فرد */
+.category-grid:has(> :nth-child(9):last-child) > :last-child {
+    grid-column: 1 / -1; /* آخرین دایره در ردیف آخر وسط قرار می‌گیره */
 }
 
 @media (min-width: 640px) {
     .category-grid {
         grid-template-columns: repeat(3, minmax(160px, 1fr));
     }
+    .category-grid:has(> :nth-child(9):last-child) > :last-child {
+        grid-column: 2 / 3; /* وسط برای 3 ستون */
+    }
 }
 
 @media (min-width: 768px) {
     .category-grid {
         grid-template-columns: repeat(4, minmax(160px, 1fr));
+    }
+    .category-grid:has(> :nth-child(9):last-child) > :last-child {
+        grid-column: 2 / 4; /* وسط برای 4 ستون */
     }
 }
