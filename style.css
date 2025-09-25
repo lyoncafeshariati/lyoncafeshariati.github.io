@@ -37,34 +37,26 @@ body {
     }
 }
 
-/* استایل دکمه خانه - موقعیت جدید */
+/* استایل دکمه خانه - ثابت و زیر تیتر */
 .home-button {
+    position: absolute;
+    right: 1rem; /* سمت چپ در صفحه RTL */
+    top: 50%;
+    transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-button:hover {
-    transform: scale(1.1);
+    transform: translateY(-50%) scale(1.1);
     background: rgba(212, 175, 55, 0.2);
-}
-
-/* هدر اصلی */
-header {
-    position: relative;
-    width: 100%;
-    padding: 0 1rem;
-}
-
-/* استایل لوگو */
-header img {
-    border: 2px solid #d4af37;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
 }
 
 /* استایل دایره‌های دسته‌بندی */
@@ -213,33 +205,12 @@ header img {
     margin-top: 3.5rem; /* فاصله بین دایره‌های کوچک و سربرگ آیتم‌ها */
 }
 
-/* استایل جدید برای آیتم‌های منو */
 .grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div {
     display: flex;
-    flex-direction: column; /* چیدمان عمودی */
-    position: relative; /* برای قرارگیری قیمت در موقعیت مطلق */
-    min-height: 140px; /* ارتفاع مناسب برای آیتم */
+    justify-content: space-between; /* برای چیدمان بهتر */
+    align-items: center; /* وسط کردن عمودی */
 }
 
-/* محتوای سمت چپ (عنوان و توضیحات) */
-.grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div > div:first-child {
-    flex: 1;
-    padding-left: 1rem;
-}
-
-/* عکس در سمت راست */
 .grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div img {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-}
-
-/* قیمت در چپ پایین */
-.grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div > div:last-child {
-    position: absolute;
-    left: 1rem;
-    bottom: 1rem;
-    margin: 0;
+    margin: -10px 0; /* تنظیم عمودی عکس وسط کادر */
 }
