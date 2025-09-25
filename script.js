@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md">
                                 </div>
                             </div>
-                            <div class="text-lg font-semibold text-yellow-600 mt-2 ml-4">
+                            <div class="text-lg font-semibold text-yellow-600 mt-2 text-right sm:text-left">
                                 ${item.price}
                             </div>
                         `).join('')}
