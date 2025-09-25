@@ -404,20 +404,33 @@ body {
 
 
 
+/* استایل جدید برای آیتم‌های منو */
 .grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div {
-
     display: flex;
-
-    justify-content: space-between; /* برای چیدمان بهتر */
-
-    align-items: center; /* وسط کردن عمودی */
-
+    flex-direction: column; /* چیدمان عمودی */
+    position: relative; /* برای قرارگیری قیمت در موقعیت مطلق */
+    min-height: 140px; /* ارتفاع مناسب برای آیتم */
 }
 
+/* محتوای سمت چپ (عنوان و توضیحات) */
+.grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div > div:first-child {
+    flex: 1;
+    padding-left: 1rem;
+}
 
-
+/* عکس در سمت راست */
 .grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div img {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
 
-    margin: -10px 0; /* تنظیم عمودی عکس وسط کادر */
-
+/* قیمت در چپ پایین */
+.grid.grid-cols-1.sm\:grid-cols-2.gap-6 > div > div:last-child {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    margin: 0;
 }
