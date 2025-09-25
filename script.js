@@ -68,14 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         ${category.items.map(item => `
                             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-yellow-500 p-4 transition-all duration-300">
                                 <div class="flex items-start">
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-baseline mb-2">
-                                            <h3 class="text-lg font-bold text-yellow-400 shadow-md hover:text-yellow-300 transition-colors">${item.name}</h3>
-                                            <span class="text-yellow-600 font-semibold">${item.price}</span>
-                                        </div>
+                                    <div class="flex-1 mr-4">
+                                        <h3 class="text-lg font-bold text-yellow-400 shadow-md hover:text-yellow-300 transition-colors mb-1">${item.name}</h3>
                                         <p class="text-gray-400 text-sm">${item.description || 'توضیحات موجود نیست'}</p>
                                     </div>
                                     <img src="${item.image || 'https://via.placeholder.com/80?text=${encodeURIComponent(item.name)}'}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md ml-4 flex-shrink-0">
+                                </div>
+                                <div class="text-yellow-600 font-semibold text-lg mt-2 ml-4">
+                                    ${item.price}
                                 </div>
                             </div>
                         `).join('')}
