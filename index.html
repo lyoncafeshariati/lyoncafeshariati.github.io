@@ -1,30 +1,39 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyon Cafe Menu</title>
+    <title>منوی کافه لیون</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/4a4d2d1f65.js" crossorigin="anonymous"></script>
 </head>
-<body>
-
-    <header class="site-header">
-        <h1>Lyon Cafe Menu</h1>
+<body class="bg-gray-900 text-white font-vazir min-h-screen flex flex-col items-center p-4">
+    <!-- هدر -->
+    <header class="flex items-center justify-center gap-4 mb-8 animate-fadeInUp">
+        <div class="w-16 h-16 border-2 border-yellow-500 rounded-full transition-transform duration-500 hover:rotate-360"></div>
+        <h1 class="text-3xl font-bold text-yellow-500">کافه لیون</h1>
     </header>
 
-    <main class="menu-container">
-    </main>
+    <!-- دکمه خانه -->
+    <button id="home-button" class="fixed top-4 left-4 bg-yellow-500 text-gray-900 px-4 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+        خانه
+    </button>
 
-    <footer class="site-footer">
+    <!-- کانتینر منو -->
+    <main id="menu-container" class="w-full max-w-4xl"></main>
+
+    <!-- فوتر -->
+    <footer class="mt-12 text-center text-gray-400 animate-fadeInUp animation-delay-200">
         <p>آدرس: تهران، خیابان شریعتی، بین کوچه بوشهر و گوهر، جنب سینما سروش، پلاک ۲۴۹، کافه لیون</p>
-        <a href="https://instagram.com/your-username" target="_blank" class="social-icon">
-        <i class="fab fa-instagram"></i>
+        <a href="#" class="inline-block mt-4 text-2xl text-yellow-500 hover:scale-110 transition-transform">
+            <i class="fa-brands fa-instagram"></i>
         </a>
     </footer>
-<script src="script.js?v=1.0"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
+```
