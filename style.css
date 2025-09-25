@@ -78,7 +78,7 @@ body {
 /* کادر عنوان زیر دایره */
 .category-circle .title-box {
     position: absolute;
-    bottom: -3.5rem; /* کادر بزرگ‌تر */
+    bottom: -4rem; /* کادر بزرگ‌تر */
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
@@ -146,7 +146,7 @@ body {
 .category-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(128px, 1fr));
-    gap: 1.5rem;
+    gap: 1.5rem 2rem;
     justify-items: center;
     width: 100%;
 }
