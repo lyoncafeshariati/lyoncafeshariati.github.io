@@ -1,3 +1,4 @@
+```javascript
 document.addEventListener("DOMContentLoaded", function () {
     const menuContainer = document.getElementById("menu-container");
     const homeButton = document.getElementById("home-button");
