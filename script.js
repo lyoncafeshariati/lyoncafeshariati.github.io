@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
         menuContainer.innerHTML = `
             <div class="animate-fadeIn">
                 <!-- دایره‌های کوچک شده -->
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="small-grid">
                     ${menuData.categories.map(cat => `
-                        <div class="category-circle-small relative ${cat.name === categoryName ? 'ring-2 ring-yellow-500' : ''}" data-category="${cat.name}">
+                        <div class="category-circle-small relative ${cat.name === categoryName ? 'selected' : ''}" data-category="${cat.name}">
                             <img src="${cat.categoryImage || 'https://via.placeholder.com/64?text=${encodeURIComponent(cat.name)}'}" alt="${cat.name}" class="rounded-full">
                             <div class="title-box">${cat.name}</div>
                         </div>
