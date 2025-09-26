@@ -41,7 +41,7 @@ body {
 
 /* استایل دکمه خانه */
 .home-button {
-    position: relative;
+    position: absolute;
     top: 1rem;
     left: 1rem;
     background: rgba(0, 0, 0, 0.9);
