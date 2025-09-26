@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منوی کافه لیون</title>
+    <title>Lyon Cafe Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -11,18 +11,19 @@
 </head>
 <body class="bg-gray-900 text-white font-vazir min-h-screen flex flex-col items-center p-4">
     <!-- هدر -->
-<header class="relative flex flex-col items-center justify-center mb-8 animate-fadeInUp">
-    <h1 class="text-4xl font-bold text-yellow-500 mb-2">Lyon Cafe Menu</h1>
-    <button id="home-button" class="home-button absolute right-4 top-1/2 transform -translate-y-1/2 text-yellow-500 hover:text-yellow-400 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-    </button>
-</header>
+    <header class="relative w-full max-w-4xl mb-8 mt-8 animate-fadeInUp">
+        <div class="flex justify-center items-center relative">
+            <button id="home-button" class="home-button absolute left-0 top-1/2 transform -translate-y-1/2 text-yellow-500 hover:text-yellow-400 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </button>
+            <h1 class="text-4xl font-bold text-yellow-500 text-center">Lyon Cafe Menu</h1>
+        </div>
+    </header>
 
     <!-- کانتینر منو -->
-    <main id="menu-container" class="w-full max-w-4xl">
-        <p class="text-center text-white">در حال بارگذاری منو...</p>
+    <main>
     </main>
 
     <!-- فوتر -->
