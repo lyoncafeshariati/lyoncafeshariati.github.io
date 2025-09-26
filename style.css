@@ -43,9 +43,8 @@ body {
 /* استایل دکمه خانه */
 .home-button {
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 0;
-    transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
     border-radius: 50%;
@@ -55,7 +54,7 @@ body {
 }
 
 .home-button:hover {
-    transform: translateY(-80%) scale(1.1);
+    transform: scale(1.1);
     background: rgba(212, 175, 55, 0.2);
 }
 
