@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedCategory = null;
 
     // لود کردن منو از menu.json
-    fetch('menu.json')
+    fetch('menu.json?v=1.0')
         .then(response => {
             if (!response.ok) {
                 throw new Error('فایل menu.json پیدا نشد');
