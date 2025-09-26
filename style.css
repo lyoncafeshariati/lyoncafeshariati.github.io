@@ -1,407 +1,224 @@
 body {
-
     font-family: 'Vazirmatn', sans-serif;
-
 }
-
 
 
 /* انیمیشن محو شدن و بالا آمدن */
-
 .animate-fadeInUp {
-
     animation: fadeInUp 0.8s ease-out;
-
 }
-
-
 
 .animation-delay-200 {
-
     animation-delay: 0.2s;
-
     animation-fill-mode: both;
-
 }
-
-
 
 @keyframes fadeInUp {
-
     from {
-
         opacity: 0;
-
         transform: translateY(30px);
-
     }
-
     to {
-
         opacity: 1;
-
         transform: translateY(0);
-
     }
-
 }
-
-
 
 /* انیمیشن محو شدن */
-
 .animate-fadeIn {
-
     animation: fadeIn 0.5s ease-out;
-
 }
-
 
 
 @keyframes fadeIn {
-
     from {
-
         opacity: 0;
-
     }
-
     to {
-
         opacity: 1;
-
     }
-
 }
-
 
 
 /* استایل دکمه خانه */
-
 .home-button {
-
     position: fixed;
-
     top: 1rem;
-
     left: 1rem;
-
     background: rgba(0, 0, 0, 0.8);
-
     padding: 0.5rem;
-
     border-radius: 50%;
-
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
     z-index: 1000;
-
     transition: all 0.3s ease;
-
 }
-
 
 
 .home-button:hover {
-
     transform: scale(1.1);
-
     background: rgba(212, 175, 55, 0.2);
-
 }
-
-
 
 /* استایل دایره‌های دسته‌بندی */
-
 .category-circle {
-
     position: relative;
-
     cursor: pointer;
-
     transition: all 0.3s ease;
-
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.3);
-
 }
-
 
 
 .category-circle:hover {
-
     transform: scale(1.1); /* فقط بزرگ شدن، بدون کج شدن */
-
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.5);
-
 }
-
 
 
 .category-circle img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     border-radius: 9999px;
-
 }
-
 
 
 /* کادر عنوان زیر دایره */
-
 .category-circle .title-box {
-
     position: absolute;
-
     bottom: -3rem; /* کادر بزرگ‌تر */
-
     left: 50%;
-
     transform: translateX(-50%);
-
     background: rgba(0, 0, 0, 0.9);
-
     padding: 8px 16px; /* پدینگ بیشتر */
-
     border-radius: 6px;
-
     border: 1px solid rgba(212, 175, 55, 0.5);
-
     font-size: clamp(0.8rem, 3vw, 1.2rem); /* فونت با توجه به اندازه کادر تنظیم بشه */
-
     font-weight: 700;
-
     color: #fff;
-
     text-align: center;
-
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-
     width: 105%;
-
     min-height: 2.8rem; /* ارتفاع بیشتر */
-
     white-space: nowrap; /* همیشه یک خط */
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
 }
-
 
 
 /* استایل دایره‌های کوچک شده */
-
 .category-circle-small {
-
     width: 64px;
-
     height: 64px;
-
     cursor: pointer;
-
     transition: all 0.3s ease;
-
 }
-
 
 
 .category-circle-small:hover {
-
     transform: scale(1.15); /* فقط بزرگ شدن، بدون کج شدن */
-
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-
 }
-
 
 
 .category-circle-small img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     border-radius: 9999px;
-
 }
-
 
 
 /* کادر عنوان زیر دایره کوچک */
-
 .category-circle-small .title-box {
-
     position: absolute;
-
     bottom: -1.4rem;
-
     left: 50%;
-
     transform: translateX(-50%);
-
     background: rgba(0, 0, 0, 0.9);
-
     padding: 3px 6px;
-
     border-radius: 4px;
-
     border: 1px solid rgba(212, 175, 55, 0.5);
-
     font-size: clamp(0.4rem, 2vw, 0.7rem);
-
     font-weight: 600;
-
     color: #fff;
-
     text-align: center;
-
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-
     width: 110%;
-
     white-space: nowrap;
-
     min-height: 1.4rem; /* برای 2 خط */
-
     overflow: hidden;
-
     line-height: 1.1;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
 }
-
 
 
 /* گرید دایره‌ها وسط‌چین */
-
 .category-grid {
-
     display: grid;
-
     grid-template-columns: repeat(2, minmax(128px, 1fr));
-
     gap: 5rem 1.5rem;
-
     justify-items: center;
-
     width: 100%;
-
 }
-
 
 
 /* گرید دایره‌های کوچک (3 تا در ردیف) */
-
 .small-grid {
-
     display: grid;
-
     grid-template-columns: repeat(3, minmax(64px, 1fr));
-
     gap: 2rem 1.5rem; /* فاصله بیشتر */
-
     justify-items: center;
-
     width: 100%;
-
 }
-
 
 
 /* وسط‌چین کردن آخرین دایره در تعداد فرد */
-
 .category-grid:has(> :nth-child(9):last-child) > :last-child {
-
     grid-column: 1 / -1;
-
 }
-
 
 
 @media (min-width: 640px) {
-
     .category-grid {
-
         grid-template-columns: repeat(3, minmax(160px, 1fr));
-
     }
 
     .category-grid:has(> :nth-child(9):last-child) > :last-child {
-
         grid-column: 2 / 3;
-
     }
-
     .small-grid {
-
         grid-template-columns: repeat(3, minmax(64px, 1fr));
-
         gap: 2.5rem;
-
     }
-
 }
-
 
 
 @media (min-width: 768px) {
-
     .category-grid {
-
         grid-template-columns: repeat(4, minmax(160px, 1fr));
-
     }
-
     .category-grid:has(> :nth-child(9):last-child) > :last-child {
-
         grid-column: 2 / 4;
-
     }
-
     .small-grid {
-
         grid-template-columns: repeat(3, minmax(64px, 1fr));
-
         gap: 3rem;
-
     }
-
 }
-
 
 
 /* متمایز کردن منوی باز */
-
 .category-circle-small.selected {
-
     ring: 4px solid #d4af37; /* حاشیه ضخیم طلایی */
-
 }
-
 
 
 .animate-fadeIn > div:last-child h2 {
-
     margin-top: 3.5rem; /* فاصله بین دایره‌های کوچک و سربرگ آیتم‌ها */
-
 }
-
 
 
 /* استایل جدید برای آیتم‌های منو */
