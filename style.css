@@ -39,25 +39,34 @@ body {
     }
 }
 
-
 /* استایل دکمه خانه */
 .home-button {
     position: fixed;
     top: 1rem;
     left: 1rem;
     background: rgba(0, 0, 0, 0.9);
-    padding: 0.6rem;
+    padding: 0.5rem; /* کوچک‌تر شده */
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     z-index: 1000;
     transition: all 0.3s ease;
     border: 1px solid rgba(212, 175, 55, 0.3);
+    width: 40px;  /* اندازه ثابت */
+    height: 40px; /* اندازه ثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-button:hover {
-    transform: scale(1.15);
+    transform: scale(1.1); /* کوچک‌تر شده */
     background: rgba(212, 175, 55, 0.2);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.home-button svg {
+    width: 20px;  /* آیکون کوچک‌تر */
+    height: 20px; /* آیکون کوچک‌تر */
 }
 
 /* هدر برای موبایل */
