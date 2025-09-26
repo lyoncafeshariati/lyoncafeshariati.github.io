@@ -11,14 +11,15 @@
 </head>
 <body class="bg-gray-900 text-white font-vazir min-h-screen flex flex-col items-center p-4">
     <!-- هدر -->
-    <header class="relative w-full max-w-4xl mb-8 mt-8 animate-fadeInUp">
-        <div class="flex justify-center items-center relative">
-            <button id="home-button" class="home-button absolute left-0 top-1/2 transform -translate-y-1/2 text-yellow-500 hover:text-yellow-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <header class="w-full max-w-4xl mb-8 mt-8 animate-fadeInUp">
+        <div class="flex justify-between items-center px-4">
+            <button id="home-button" class="home-button text-yellow-500 hover:text-yellow-400 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                 </svg>
             </button>
-            <h1 class="text-4xl font-bold text-yellow-500 text-center">Lyon Cafe Menu</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold text-yellow-500 text-center flex-1">Lyon Cafe Menu</h1>
+            <div class="w-8"></div> <!-- فضای خالی برای بالانس -->
         </div>
     </header>
 
@@ -35,6 +36,5 @@
         </a>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script src="script.js?v=1.0"></script></body>
 </html>
